@@ -13,7 +13,7 @@ Este repositório contém o **kit de partida** da Cindy — uma base portável d
 Com este kit você pode:
 
 - **Criar projetos novos** com estrutura canônica DOC2.5
-- **Usar 107+ skills** pré-configuradas para os agentes
+- **Usar 24 skills essenciais** pré-configuradas para os agentes
 - **Manter rastreabilidade** com sprints, timestamps e backlog
 - **Aplicar governança** com gates de aprovação e evidências
 
@@ -55,7 +55,7 @@ O **[Prompt.md](Prompt.md)** é o template canônico para bootstrap de novos pro
 | `Cindy_Contract.md` | Contrato canônico de descoberta dos agentes |
 | `rules/` | Regras operacionais DOC2.5 (25 regras) |
 | `Templates/` | 8 templates para geração de documentação |
-| `.agents/skills/` | 107+ skills canônicas (source of truth) |
+| `.agents/skills/` | 24 skills canônicas (source of truth) |
 | `.cline/skills/` | Skills do runtime Cline |
 | `.codex/skills/` | Skills do runtime Codex |
 | `.clinerules/` | Regras globais e workflows DOC2.5 |

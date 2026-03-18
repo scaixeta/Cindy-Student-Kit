@@ -205,12 +205,12 @@ Cindy/
 |---|---|---|
 | `rules/WORKSPACE_RULES.md` | Fonte operacional obrigatória. **Prevalece sobre tudo.** | Sempre, antes de qualquer ação |
 | `Cindy_Contract.md` | Contrato de descoberta: como o agente identifica runtime, skills e gates | Ao iniciar conversa nova |
-| `README.md` | Entry point do repositório. Resumo do estado atual | Ao iniciar conversa nova |
-| `Dev_Tracking.md` | Índice mestre: lista de sprints e registros históricos | Ao verificar estado do projeto |
-| `Dev_Tracking_SX.md` | Sprint ativa: backlog, decisões, timestamps | Ao trabalhar na sprint |
-| `tests/bugs_log.md` | Log de bugs e testes por sprint | Ao registrar ou consultar bugs |
-| `Templates/` | Modelos para gerar documentação em projetos novos | Ao fazer bootstrap |
-| `Prompt.md` | Template canônico de prompt para criar novos projetos | Ao criar projetos derivados |
+| `README.md` | Entry point próprio do kit (ou do projeto gerado) | Ao iniciar consulta |
+| `OlaCindyKB.md` | Guia completo de uso e treinamento | Para consulta de dúvidas e padrões |
+| `Prompt.md` | Template de bootstrap para novos projetos | Para criar novos projetos derivados |
+| `rules/` | Pasta contendo a `WORKSPACE_RULES.md` e regras canônicas | Sempre, antes de qualquer ação |
+| `.agents/skills/` | Pasta com as 24 skills canônicas do kit | Pelo agente, para automação |
+| `Templates/` | Modelos para gerar documentação em projetos novos | Durante o bootstrap |
 
 ---
 
@@ -251,17 +251,17 @@ Exemplo de estrutura:
     └── template-field-guide.md
 ```
 
-### 4.3 Skills Mais Importantes
+### 4.3 Skills Disponíveis no Kit
 
-| Skill | Quando Usar |
+O kit inclui as 24 skills essenciais para operação DOC2.5 e automação básica.
+
+| Categoria | Skills |
 |---|---|
-| `doc25-init` | Ao iniciar conversa nova ou trocar de escopo |
-| `doc25-context-check` | Antes de expandir leitura de contexto |
-| `project-bootstrap` | Para criar um projeto novo a partir dos Templates |
-| `doc25-commit-gate` | Quando o PO autorizar commit/push |
-| `doc25-governance` | Para aplicar guardrails de governança |
-| `doc25-dev-workflow` | Para executar tarefas de desenvolvimento na sprint |
-| `doc25-preflight` | Antes de alegar conformidade ou conclusão |
+| **Core DOC2.5** | `doc25-init`, `doc25-context-check`, `doc25-governance`, `doc25-commit-gate`, `doc25-preflight`, `doc25-orchestrator` |
+| **Operação** | `project-bootstrap`, `update_dev_tracking`, `doc25-dev-workflow`, `doc25-docs-workflow`, `validate_doc25_structure` |
+| **Código** | `create_code_structure`, `read_project_docs`, `execute_local_command_safe`, `doc-coauthoring` |
+| **Testes (MCP)** | `playwright-skill`, `testing-patterns`, `e2e-testing-patterns`, `tdd-workflow`, `postman_cli_run_doc25` |
+| **Dados** | `database` |
 
 ### 4.4 O que são Workflows?
 
@@ -598,9 +598,11 @@ O fluxo ideal para validar mudanças na Cindy:
 | Verificar conformidade | Skill `doc25-preflight` |
 | Registrar um bug | `tests/bugs_log.md` |
 | Ver a sprint ativa | `Dev_Tracking_SX.md` na raiz |
-| Ver o histórico de sprints | `Dev_Tracking.md` |
-| Entender a arquitetura | `docs/ARCHITECTURE.md` |
-| Ver como operar o projeto | `docs/OPERATIONS.md` |
+| Ver o histórico de sprints | `Dev_Tracking.md` (em projetos materializados) |
+| Entender a arquitetura | `docs/ARCHITECTURE.md` (em projetos materializados) |
+| Ver como operar o projeto | `docs/OPERATIONS.md` (em projetos materializados) |
+| Consultar o kit básico | **[OlaCindyKB.md](OlaCindyKB.md)** |
+| Explorar as 24 skills | Pasta `.agents/skills/` |
 
 ---
 
